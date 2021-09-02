@@ -13,6 +13,8 @@ import News from './Components/News';
 
 
 export default class App extends Component {
+  apiKey = process.env.REACT_APP_NEWS_API
+  // apiKey = "25db0bbec75045d29cc54fc69c55603c"
   render() {
     return (
       <div>
@@ -22,29 +24,29 @@ export default class App extends Component {
 
           <Switch>
           <Route exact path="/">
-          <News key = "gn" pageSize={6} country="in" category="general"></News>
+          <News apiKey = {this.apiKey}  key = "gn"   pageSize={6} country="in" category="general"></News>
           </Route>
             <Route exact path="/business">
-              <News key = "business" pageSize={6} country="in" category="business"></News>
+              <News apiKey = {this.apiKey}  key = "business" pageSize={6} country="in" category="business"></News>
             </Route>
             <Route exact path="/entertainment">
-              <News key = "entertainment" pageSize={6} country="in" category="entertainment"></News>
+              <News apiKey = {this.apiKey}  key = "entertainment" pageSize={6} country="in" category="entertainment"></News>
             </Route>
             <Route exact path="/general">
-              <News key = "general" pageSize={6} country="in" category="general"></News>
+              <News apiKey = {this.apiKey}  key = "general" pageSize={6} country="in" category="general"></News>
             </Route>
             <Route exact path="/health">
-              <News key = "health" pageSize={6} country="in" category="health"></News>
+              <News apiKey = {this.apiKey}  key = "health" pageSize={6} country="in" category="health"></News>
             </Route>
             <Route exact path="/science">
-              <News key = "science" pageSize={6} country="in" category="science"></News>
+              <News apiKey = {this.apiKey}  key = "science" pageSize={6} country="in" category="science"></News>
             </Route>
             <Route exact path="/sports">
-              <News key = "sports" pageSize={6} country="in" category="sports"></News>
+              <News apiKey = {this.apiKey}  key = "sports" pageSize={6} country="in" category="sports"></News>
             </Route>
 
             <Route exact path="/technology">
-              <News key = "technology" pageSize={6} country="in" category="technology"></News>
+              <News apiKey = {this.apiKey}  key = "technology" pageSize={6} country="in" category="technology"></News>
             </Route>
       
           </Switch>

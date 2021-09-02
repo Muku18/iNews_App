@@ -3,6 +3,8 @@ import NewsItem from './NewsItem'
 import Spinner from './Spinner';
 import InfiniteScroll from  'react-infinite-scroll-component'
 
+
+
 export class News extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +18,7 @@ export class News extends Component {
     }
 
     async updateNews() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=25db0bbec75045d29cc54fc69c55603c&page=${this.state.page}&pageSize=${this.props.pageSize}`
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`
         this.setState({ loading: true })
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -37,7 +39,7 @@ export class News extends Component {
            page: this.state.page + 1,
         })
 
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=25db0bbec75045d29cc54fc69c55603c&page=${this.state.page}&pageSize=${this.props.pageSize}`
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`
        
         let data = await fetch(url);
         let parsedData = await data.json();
